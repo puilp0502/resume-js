@@ -5,7 +5,7 @@ import { Story } from "@storybook/react/types-6-0";
 import { Profile, ProfileProps } from "./Profile";
 
 export default {
-  title: "Profile",
+  title: "Section/Profile",
   component: Profile,
 };
 

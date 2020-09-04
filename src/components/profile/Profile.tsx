@@ -21,7 +21,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 20px;
+  padding: 48px 20px;
 `;
 const ContactWrapper = styled.article`
   display: grid;

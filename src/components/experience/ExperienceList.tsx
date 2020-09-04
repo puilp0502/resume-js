@@ -12,7 +12,7 @@ const SectionTitle = styled.h1`
   margin: 10px 0 0 0;
 `;
 const ExperienceContainer = styled.section`
-  margin: 20px;
+  padding: 48px 20px;
 `;
 export function ExperienceList(props: ExperienceListProps) {
   const experiences = props.entries.map((v, idx) => (

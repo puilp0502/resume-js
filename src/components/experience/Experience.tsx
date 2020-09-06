@@ -9,7 +9,7 @@ export type ExperienceProps = {
   period?: string;
   website?: string;
   description: string;
-  bullets: string[];
+  bullets?: string[];
 
   key?: number;
 };
@@ -75,7 +75,9 @@ function Metadata({ period, website }: { period: string; website: string }) {
 }
 
 export function Experience(props: ExperienceProps) {
-  const bullets = props.bullets.map((v, idx) => <Bullet key={idx}>{v}</Bullet>);
+  const bullets = props.bullets?.map((v, idx) => (
+    <Bullet key={idx}>{v}</Bullet>
+  ));
   return (
     <ExperienceItem>
       <Title>{props.title}</Title>

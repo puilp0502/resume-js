@@ -6,7 +6,7 @@ const SectionTitle = styled.h1`
   margin: 10px 0 0 0;
 `;
 const SectionContainer = styled.section`
-  padding: 48px 20px;
+  padding: 2rem 20px 0;
 `;
 
 export type SectionProps = {

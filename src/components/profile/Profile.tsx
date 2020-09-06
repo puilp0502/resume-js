@@ -9,35 +9,40 @@ const Name = styled.h1`
   font-family: liberation-sans, sans-serif;
   font-size: 3rem;
   text-align: left;
-  margin-left: 0px;
+  margin: 0.3rem 0;
 `;
 const Description = styled.h2`
   font-size: 1.6rem;
   color: ${theme.highlight};
-  margin-left: 0px;
+  margin: 0 0 0.25rem 0;
 `;
 
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 48px 20px;
+  padding: 3rem 20px 0;
+  @media print {
+    padding: 20px 20px 0;
+  }
 `;
 const ContactWrapper = styled.article`
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 70%;
-  margin-top: 5px;
+  margin-top: 0.3rem;
 `;
 
 export type ProfileProps = {
   name: string;
   description?: string;
-  badges: ContactProps[];
+  badges?: ContactProps[];
 };
 
 export function Profile(props: ProfileProps) {
-  const badges = props.badges?.map((badge) => <Contact {...badge} />);
+  const badges = props.badges?.map((badge, idx) => (
+    <Contact key={idx} {...badge} />
+  ));
   return (
     <Wrapper>
       <Name>{props.name}</Name>

@@ -3,12 +3,12 @@ import React from "react";
 import { Experience, ExperienceProps } from "./Experience";
 import { Section } from "../Section";
 
-export type ExperienceListProps = {
+export type ExperienceSectionProps = {
   name: string;
   entries: ExperienceProps[];
 };
 
-export function ExperienceList(props: ExperienceListProps) {
+export function ExperienceSection(props: ExperienceSectionProps) {
   const experiences = props.entries.map((v, idx) => (
     <>
       <Experience key={idx} {...v} />

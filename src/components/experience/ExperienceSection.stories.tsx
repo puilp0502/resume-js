@@ -1,15 +1,15 @@
 import React from "react";
 import { Story } from "@storybook/react/types-6-0";
 
-import { ExperienceList, ExperienceListProps } from "./ExperienceList";
+import { ExperienceSection, ExperienceSectionProps } from "./ExperienceSection";
 import { ExperienceProps } from "./Experience";
 
 export default {
-  title: "Section/Experience/ExperienceList",
-  component: ExperienceList,
+  title: "Section/Experience/ExperienceSection",
+  component: ExperienceSection,
 };
 
-const Template: Story = (args: any) => <ExperienceList {...args} />;
+const Template: Story = (args: any) => <ExperienceSection {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -39,4 +39,4 @@ Default.args = {
       ],
     },
   ] as ExperienceProps[],
-} as ExperienceListProps;
+} as ExperienceSectionProps;

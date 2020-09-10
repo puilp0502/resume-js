@@ -16,15 +16,16 @@ export type ExperienceProps = {
 };
 
 const ExperienceItem = styled.article`
-  display: flex;
-  flex-direction: column;
-  margin: 0.6rem 0 0.6rem 0;
+  margin: 1rem 0.6rem;
+  @media print {
+    page-break-inside: avoid;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 1.4rem;
   font-weight: 500;
-  margin: 0.3rem 0;
+  margin: 1.5rem 0 0.5rem;
 `;
 const Organization = styled.h2`
   font-size: 1rem;
@@ -33,7 +34,8 @@ const Organization = styled.h2`
 `;
 const Description = styled.div`
   font-size: 1rem;
-  margin: 0.2rem 0;
+  margin: 1rem 0;
+  word-break: keep-all;
 `;
 const BulletList = styled.ul`
   font-size: 1rem;
@@ -51,7 +53,7 @@ const MetadataContainer = styled.div`
 `;
 const MetadataElement = styled.div`
   margin-right: 1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
 `;
 
 function Metadata({ period, website }: { period: string; website: string }) {

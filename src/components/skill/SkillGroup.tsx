@@ -9,18 +9,23 @@ export type SkillGroupProps = {
 };
 
 const SkillGroupContainer = styled.article`
-  margin: 15px 0;
+  margin: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 const GroupTitle = styled.h2`
   font-size: 1.4rem;
+  flex: 0 0 18rem;
 `;
+const Group = styled.div``;
 
 export function SkillGroup(props: SkillGroupProps) {
   const skillList = TagList({ tags: props.skills });
   return (
     <SkillGroupContainer>
       <GroupTitle>{props.groupName}</GroupTitle>
-      {skillList}
+      <Group>{skillList}</Group>
     </SkillGroupContainer>
   );
 }

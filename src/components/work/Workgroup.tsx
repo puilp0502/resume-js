@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Work, WorkProps } from "./Work";
+import theme from "../../theme";
 
 export type WorkgroupProps = {
   name: string;
@@ -47,6 +48,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   margin: 1rem 0;
+  @media print {
+    break-inside: avoid;
+  }
 `;
 const Header = styled.div`
   flex: 0 0 18rem;
@@ -57,22 +61,24 @@ const Header = styled.div`
 const Organization = styled.h2`
   font-size: 1.4rem;
   margin: 0 0 0.3rem 0;
+  color: ${theme.highlight};
 `;
 const Title = styled.h1`
   font-size: 1rem;
   font-weight: 500;
   margin: 0.3rem 0;
 `;
-
+const Divider = styled.hr`
+  border: 1px dashed #ccc;
+  margin-bottom: 1rem;
+`;
 const WorkContainer = styled.div``;
 
 export function Workgroup(props: WorkgroupProps) {
   const works = props.works?.map((v, idx) => (
     <>
       <Work key={idx} {...v} />
-      {idx < props.works.length - 1 && (
-        <hr style={{ border: "1px dashed #ccc" }} />
-      )}
+      {idx < props.works.length - 1 && <Divider />}
     </>
   ));
   return (

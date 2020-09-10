@@ -10,6 +10,7 @@ export type ExperienceProps = {
   website?: string;
   description: string;
   bullets?: string[];
+  footer?: string;
 
   key?: number;
 };
@@ -87,6 +88,7 @@ export function Experience(props: ExperienceProps) {
       <Metadata period={props.period} website={props.website} />
       <Description>{props.description}</Description>
       <BulletList>{bullets}</BulletList>
+      <Description>{props.footer}</Description>
     </ExperienceItem>
   );
 }

@@ -13,6 +13,9 @@ export type SectionProps = {
   title: string;
 };
 
+const Divider = styled.hr`
+  border: 1px solid #ccc;
+`;
 export function Section({
   title,
   children,
@@ -20,7 +23,7 @@ export function Section({
   return (
     <SectionContainer>
       <SectionTitle>{title}</SectionTitle>
-      <hr />
+      <Divider />
       {children}
     </SectionContainer>
   );

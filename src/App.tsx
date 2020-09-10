@@ -6,6 +6,7 @@ import {
   ExperienceSection,
   ExperienceSectionProps,
 } from "./components/experience";
+import { WorkgroupSection, WorkgroupSectionProps } from "./components/work";
 import { SkillSection, SkillSectionProps } from "./components/skill";
 
 import "./App.css";
@@ -20,6 +21,10 @@ type SectionData =
       data: ExperienceSectionProps;
     }
   | {
+      type: "work";
+      data: WorkgroupSectionProps;
+    }
+  | {
       type: "skill";
       data: SkillSectionProps;
     };
@@ -28,6 +33,8 @@ function SectionRenderer({ data }: { data: SectionData }) {
   switch (data.type) {
     case "profile":
       return <Profile {...data.data} />;
+    case "work":
+      return <WorkgroupSection {...data.data} />;
     case "experience":
       return <ExperienceSection {...data.data} />;
     case "skill":

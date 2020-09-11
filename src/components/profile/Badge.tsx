@@ -5,6 +5,7 @@ import theme from "../../theme";
 
 export type ContactProps = {
   icon?: string;
+  iconClass?: string;
   value: string;
   href?: string;
 };
@@ -19,10 +20,15 @@ const IconWrapper = styled.div`
 `;
 
 export function Contact(props: ContactProps) {
-  const icon_class = "fas fa-" + props.icon;
+  let icon_class = null;
+  if (!props.iconClass) {
+    icon_class = "fas fa-" + props.icon;
+  } else {
+    icon_class = props.iconClass;
+  }
   return (
     <Wrapper>
-      <IconWrapper>{props.icon && <i className={icon_class} />}</IconWrapper>
+      <IconWrapper>{icon_class && <i className={icon_class} />}</IconWrapper>
       <a style={{ color: "black" }} href={props.href}>
         <div>{props.value}</div>
       </a>

@@ -12,5 +12,9 @@ export function SkillSection(props: SkillSectionProps) {
   const skillGroups = props.groups.map((v, idx) => (
     <SkillGroup key={idx} {...v} />
   ));
-  return <Section title={props.name}>{skillGroups}</Section>;
+  return (
+    <Section title={props.name} unbreakable={true}>
+      {skillGroups}
+    </Section>
+  );
 }

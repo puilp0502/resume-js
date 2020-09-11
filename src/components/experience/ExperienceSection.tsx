@@ -6,6 +6,7 @@ import { Section } from "../Section";
 export type ExperienceSectionProps = {
   name: string;
   entries: ExperienceProps[];
+  unbreakable?: boolean;
 };
 
 export function ExperienceSection(props: ExperienceSectionProps) {
@@ -17,5 +18,9 @@ export function ExperienceSection(props: ExperienceSectionProps) {
       )}
     </>
   ));
-  return <Section title={props.name}>{experiences}</Section>;
+  return (
+    <Section title={props.name} unbreakable={props.unbreakable}>
+      {experiences}
+    </Section>
+  );
 }

@@ -31,6 +31,9 @@ const ContactWrapper = styled.article`
   grid-template-columns: 1fr 1fr;
   width: 70%;
   margin-top: 0.3rem;
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export type ProfileProps = {

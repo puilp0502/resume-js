@@ -13,10 +13,17 @@ const SkillGroupContainer = styled.article`
   display: flex;
   flex-direction: row;
   align-items: center;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: start;
+  }
 `;
 const GroupTitle = styled.h2`
   font-size: 1.4rem;
   flex: 0 0 18rem;
+  @media screen and (max-width: 800px) {
+    flex: auto;
+  }
 `;
 const Group = styled.div``;
 

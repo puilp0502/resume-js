@@ -51,12 +51,19 @@ const Container = styled.div`
   @media print {
     break-inside: avoid;
   }
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 const Header = styled.div`
   flex: 0 0 18rem;
   margin: 0.6rem;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 800px) {
+    flex: auto;
+    margin: 0.6rem 0;
+  }
 `;
 const Organization = styled.h2`
   font-size: 1.4rem;

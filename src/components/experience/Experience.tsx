@@ -20,6 +20,9 @@ const ExperienceItem = styled.article`
   @media print {
     page-break-inside: avoid;
   }
+  @media screen and (max-width: 800px) {
+    margin: 1rem 0;
+  }
 `;
 
 const Title = styled.h1`

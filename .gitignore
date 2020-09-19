@@ -1,2 +1,5 @@
+# Build output
 dist/
+scripts/scriptingModule.js
+
 node_modules/

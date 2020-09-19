@@ -1,8 +1,11 @@
-import { hot } from 'react-hot-loader/root';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import _App from './App';
+import { hot } from "react-hot-loader/root";
+import React from "react";
+import ReactDOM from "react-dom";
+import _App, { ResumeData } from "./App";
 
 const App = hot(_App);
-ReactDOM.render(<App />, document.getElementById('root'));
+import resumeData from "../resume.json";
+ReactDOM.render(
+  <App resumeData={resumeData as ResumeData} />,
+  document.getElementById("root")
+);

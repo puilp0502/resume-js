@@ -29,6 +29,10 @@ type SectionData =
       data: SkillSectionProps;
     };
 
+export type ResumeData = {
+  sections: SectionData[];
+};
+
 function SectionRenderer({ data }: { data: SectionData }) {
   switch (data.type) {
     case "profile":
@@ -54,11 +58,9 @@ const Container = styled.div`
   }
   margin: auto;
 `;
-/// Temporary data ingest method
-import resumeData from "./resume.json";
 
-function App() {
-  const sections = resumeData.sections.map((v, idx) => (
+function App(props: { resumeData: ResumeData }) {
+  const sections = props.resumeData.sections.map((v, idx) => (
     <SectionRenderer data={v as SectionData} key={idx} />
   ));
   return <Container>{sections}</Container>;
